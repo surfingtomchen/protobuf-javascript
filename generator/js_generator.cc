@@ -2294,7 +2294,7 @@ void Generator::GenerateFieldValueExpression(io::Printer* printer,
         "$index$$default$)",
         "cardinality", cardinality, "type", type, "with_default", with_default,
         "obj", obj_reference, "index", JSFieldIndex(field), "default",
-        default_arg);
+        field->is_required()?default_arg:", undefined");
   }
 }
 
