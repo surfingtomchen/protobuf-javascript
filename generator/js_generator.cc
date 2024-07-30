@@ -476,7 +476,7 @@ std::string JSIdent(const GeneratorOptions& options,
     result += "Map";
   } else if (!drop_list && field->is_repeated()) {
     // Repeated field.
-    result += "List";
+    result += "";
   }
   return result;
 }
@@ -2533,7 +2533,7 @@ void GenerateBytesWrapper(const GeneratorOptions& options, io::Printer* printer,
       FieldComments(field, bytes_mode), "type", type, "class",
       GetMessagePath(options, field->containing_type()), "name",
       JSGetterName(options, field, bytes_mode), "list",
-      field->is_repeated() ? "List" : "", "suffix",
+      field->is_repeated() ? "" : "", "suffix",
       JSByteGetterSuffix(bytes_mode), "defname",
       JSGetterName(options, field, BYTES_DEFAULT));
 }
